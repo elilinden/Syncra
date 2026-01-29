@@ -1,86 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syncra | Privacy & Support</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-        .brand-gradient { background: linear-gradient(135deg, #3366cc 0%, #2dd4bf 100%); }
-        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Syncra — All your spending in one place</title>
+  <meta name="description" content="Syncra brings your spending into one clean dashboard. Connect accounts via Plaid and view balances and transactions in one place." />
+  <meta name="theme-color" content="#0b0b0f" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Syncra" />
+  <meta property="og:description" content="All your spending in one place. Private by design." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="text-slate-800">
 
-    <nav class="fixed w-full z-50 glass border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 brand-gradient rounded-lg flex items-center justify-center text-white font-bold text-xl">S</div>
-                <span class="text-xl font-bold tracking-tight">Syncra</span>
-            </div>
-            <div class="space-x-6 text-sm font-semibold">
-                <a href="#support" class="hover:text-blue-600 transition">Support</a>
-                <a href="#privacy" class="hover:text-blue-600 transition">Privacy</a>
-                <a href="#terms" class="hover:text-blue-600 transition">Terms</a>
-            </div>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Syncra home">
+        <span class="logo">S</span>
+        <span>Syncra</span>
+      </a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#" id="appstoreLinkTop">Download</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container grid2">
+        <div>
+          <h1>All your spending in one place.</h1>
+          <p class="lead">
+            Syncra connects your accounts via Plaid and shows balances + transactions in one clean dashboard.
+            Built with data minimization and secure-by-default controls.
+          </p>
+
+          <div class="cta">
+            <a class="btn btn-primary" href="#" id="appstoreLink">Download on the App Store</a>
+            <a class="btn btn-ghost" href="privacy.html">Read Privacy Policy</a>
+          </div>
+
+          <div class="meta">
+            <span class="pill">iOS</span>
+            <span class="pill">Plaid-powered connection</span>
+            <span class="pill">Private by design</span>
+          </div>
         </div>
-    </nav>
 
-    <header class="pt-32 pb-20 brand-gradient text-white text-center px-6">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Support & Legal Center</h1>
-        <p class="text-lg opacity-90 max-w-2xl mx-auto font-medium">Everything you need to know about how we protect your data and how to get help with Syncra.</p>
-    </header>
-
-    <main class="max-w-4xl mx-auto px-6 -mt-10 mb-20 space-y-12">
-        
-        <section id="support" class="glass p-8 rounded-2xl shadow-xl border border-white">
-            <h2 class="text-2xl font-bold mb-6 flex items-center">
-                <span class="mr-3">✉️</span> Customer Support
-            </h2>
-            <p class="mb-6 text-slate-600">Need help with a transaction or connecting your bank? Our team is here to help.</p>
-            <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                <p class="font-semibold text-blue-900">Email us at:</p>
-                <a href="mailto:support@syncra.app" class="text-xl text-blue-600 font-bold hover:underline">support@syncra.app</a>
-                <p class="mt-2 text-sm text-blue-700">We typically respond within 24 hours.</p>
+        <div class="phone-card" aria-label="App preview">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="mock-top">
+                <div class="mock-dot"></div>
+                <div class="mock-title">Dashboard</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-row">
+                  <div class="mock-label">Checking</div>
+                  <div class="mock-value">$4,812</div>
+                </div>
+                <div class="mock-row">
+                  <div class="mock-label">Credit Card</div>
+                  <div class="mock-value">$1,209</div>
+                </div>
+                <div class="mock-row">
+                  <div class="mock-label">This month</div>
+                  <div class="mock-value">-$2,034</div>
+                </div>
+              </div>
+              <div class="mock-list">
+                <div class="mock-item">
+                  <div>
+                    <div class="mock-merchant">Groceries</div>
+                    <div class="mock-sub">Today</div>
+                  </div>
+                  <div class="mock-amt">-$62.18</div>
+                </div>
+                <div class="mock-item">
+                  <div>
+                    <div class="mock-merchant">Subway</div>
+                    <div class="mock-sub">Yesterday</div>
+                  </div>
+                  <div class="mock-amt">-$2.90</div>
+                </div>
+                <div class="mock-item">
+                  <div>
+                    <div class="mock-merchant">Coffee</div>
+                    <div class="mock-sub">Yesterday</div>
+                  </div>
+                  <div class="mock-amt">-$5.75</div>
+                </div>
+              </div>
+              <div class="mock-footer">No bank passwords stored.</div>
             </div>
-        </section>
+          </div>
+          <p class="small muted center">Preview mockup (replace with real screenshots if you want).</p>
+        </div>
+      </div>
+    </section>
 
-        <section id="privacy" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold mb-6">Privacy Policy</h2>
-            <div class="prose prose-slate max-w-none text-slate-600 space-y-4">
-                <p class="font-bold text-slate-900">Effective Date: January 28, 2026</p>
-                <p>Syncra respects your privacy. This policy explains how we handle data when you use our mobile application.</p>
-                
-                <h3 class="font-bold text-slate-900 mt-6">1. Data Collection</h3>
-                <p>We use Plaid to connect to your financial institutions. Syncra does not store your bank usernames or passwords. We only access transaction data and account balances with your explicit permission.</p>
-                
-                <h3 class="font-bold text-slate-900 mt-6">2. Security</h3>
-                <p>All data is transmitted via encrypted TLS 1.2+ channels. We utilize device-level biometrics (FaceID/TouchID) to ensure only you can access your data within the app.</p>
-                
-                <h3 class="font-bold text-slate-900 mt-6">3. Data Retention</h3>
-                <p>We do not sell your data. Transaction information is retrieved ephemerally and is only stored as long as necessary to provide the service.</p>
-            </div>
-        </section>
+    <section class="section" id="features">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Connect with Plaid</h3>
+            <p>Secure account linking through Plaid Link. Syncra never sees or stores your bank login credentials.</p>
+          </div>
+          <div class="card">
+            <h3>Balances + Transactions</h3>
+            <p>View your accounts in one place. Pulls data on-demand and keeps storage minimal.</p>
+          </div>
+          <div class="card">
+            <h3>Privacy-first</h3>
+            <p>We design for minimization: no unnecessary data collection, no selling of personal information.</p>
+          </div>
+          <div class="card">
+            <h3>Support you can reach</h3>
+            <p>Need help? Use the Support page to contact us and find troubleshooting steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="terms" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold mb-6">Terms of Service</h2>
-            <div class="prose prose-slate max-w-none text-slate-600 space-y-4 text-sm">
-                <p>By using Syncra, you agree to these terms:</p>
-                <ul class="list-disc ml-5 space-y-2">
-                    <li>Syncra is provided "as is" without warranties of any kind.</li>
-                    <li>You are responsible for maintaining the security of your device and biometric data.</li>
-                    <li>We reserve the right to modify or terminate the service at any time.</li>
-                </ul>
-            </div>
-        </section>
+    <section class="section soft">
+      <div class="container grid2">
+        <div>
+          <h2>Security snapshot</h2>
+          <ul class="list">
+            <li>HTTPS (TLS 1.2+) for all network calls</li>
+            <li>MFA required for admin portals (GitHub, Render, Plaid, Apple)</li>
+            <li>Secrets stored as environment variables — never in source code</li>
+            <li>Operational logs retained max 30 days and scrubbed of tokens</li>
+          </ul>
+          <p class="small muted">More details: see the Privacy Policy and Support page.</p>
+        </div>
+        <div class="callout">
+          <h3>Questions?</h3>
+          <p class="muted">Visit Support for troubleshooting, FAQs, and contact.</p>
+          <a class="btn btn-primary" href="support.html">Go to Support</a>
+        </div>
+      </div>
+    </section>
 
-    </main>
+    <section class="section">
+      <div class="container">
+        <h2>FAQ</h2>
+        <details class="faq">
+          <summary>Does Syncra store my bank username/password?</summary>
+          <p>No. Bank authentication happens through Plaid Link. Syncra does not collect or store bank login credentials.</p>
+        </details>
+        <details class="faq">
+          <summary>Do you sell my data?</summary>
+          <p>No. Syncra does not sell personal information.</p>
+        </details>
+        <details class="faq">
+          <summary>How do I unlink an account?</summary>
+          <p>Open the app settings and choose “Unlink Account.” Syncra clears local caches and deletes server-side tokens used to access data.</p>
+        </details>
+      </div>
+    </section>
+  </main>
 
-    <footer class="py-10 text-center text-slate-400 text-sm border-t border-slate-200">
-        <p>&copy; 2026 Syncra. Developed by Eli Linden.</p>
-    </footer>
+  <footer class="footer">
+    <div class="container footergrid">
+      <div>
+        <div class="brand footbrand"><span class="logo">S</span><span>Syncra</span></div>
+        <p class="small muted">© <span id="year"></span> Syncra. All rights reserved.</p>
+      </div>
+      <div class="footlinks">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+  </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // TODO: replace with your real App Store URL once you have it
+    const APP_STORE_URL = "#"; // e.g., "https://apps.apple.com/app/idXXXXXXXXXX"
+    document.getElementById("appstoreLink").href = APP_STORE_URL;
+    document.getElementById("appstoreLinkTop").href = APP_STORE_URL;
+  </script>
 </body>
 </html>
