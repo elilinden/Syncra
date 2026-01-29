@@ -13,7 +13,6 @@
   <header class="header">
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="Syncra home">
-        <!-- ✅ Must match your repo file exactly: Logo (3).png -->
         <img src="Logo (3).png" alt="Syncra logo" class="brand-logo" />
         <span>Syncra</span>
       </a>
@@ -39,80 +38,68 @@
       <div class="card">
         <h3>Overview</h3>
         <p class="muted">
-          Syncra is designed around data minimization. We collect and process only what is needed to connect accounts
-          and display balances and transactions. Syncra does not sell personal information.
+          Syncra is built on a foundation of data minimization and hardware-level security. We collect and process only the information necessary to display your financial data securely. Syncra does not sell personal information.
         </p>
       </div>
 
       <div class="card" style="margin-top:14px;">
         <h3>Information We Process</h3>
-        <p class="muted">Depending on how you use Syncra, we may process:</p>
+        <p class="muted">Depending on your usage, Syncra processes the following:</p>
         <ul class="list">
-          <li><b>Financial data (via Plaid):</b> account balances, account metadata, and transactions needed for display.</li>
-          <li><b>Technical data:</b> basic diagnostics (e.g., request IDs, error types) to keep the service working.</li>
+          <li><b>Financial data (via Plaid):</b> Account balances, merchant names, and transaction history required for the dashboard.</li>
+          <li><b>Biometric Metadata:</b> When using FaceID or TouchID, verification is performed locally by the device hardware; Syncra does not see or store your biometric templates.</li>
+          <li><b>Technical data:</b> Basic diagnostics and error types are processed locally or in secure backend logs to maintain service integrity.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <h3>Security and Biometrics</h3>
+        <p class="muted">
+          Syncra utilizes Apple's most secure hardware features to protect your financial clarity:
+        </p>
+        <ul class="list">
+          <li><b>Biometric Verification:</b> The app requires FaceID or TouchID to unlock, ensuring only you can view your data.</li>
+          <li><b>Background Protection:</b> The application automatically re-locks whenever it enters the background.</li>
+          <li><b>Hardware Encryption:</b> Your "linked" status and sensitive flags are stored in the <b>iOS Keychain</b>, which uses hardware-backed encryption.</li>
         </ul>
       </div>
 
       <div class="card" style="margin-top:14px;">
         <h3>Bank Credentials</h3>
         <p class="muted">
-          Syncra does <b>not</b> collect, see, or store your bank username or password.
-          Authentication occurs through <b>Plaid Link</b>.
+          Syncra does <b>not</b> collect, see, or store your bank username or password. 
+          Authentication occurs directly through <b>Plaid Link</b>, and Syncra only manages secure, scoped tokens.
         </p>
-      </div>
-
-      <div class="card" style="margin-top:14px;">
-        <h3>How Syncra Uses Plaid</h3>
-        <p class="muted">
-          Syncra uses Plaid to connect to financial institutions and retrieve balances and transactions.
-          Syncra receives tokens from Plaid that allow the backend to request data from Plaid on your behalf.
-        </p>
-        <ul class="list">
-          <li><b>Tokens:</b> tokens are treated as sensitive and are not exposed in logs or analytics.</li>
-          <li><b>Data access:</b> Syncra requests only what is needed to provide the app experience.</li>
-        </ul>
       </div>
 
       <div class="card" style="margin-top:14px;">
         <h3>Data Storage and Retention</h3>
         <ul class="list">
-          <li><b>Financial data:</b> retrieved on-demand and not stored in a persistent database beyond immediate session needs.</li>
-          <li><b>Plaid access tokens:</b> retained only while your account remains linked to support on-demand retrieval.</li>
-          <li><b>Operational logs:</b> retained up to 30 days and scrubbed to avoid storing tokens or raw financial payloads.</li>
+          <li><b>Financial data:</b> Retrieved on-demand via the backend and is not persisted in a long-term database beyond immediate session requirements.</li>
+          <li><b>Access Tokens:</b> Securely managed server-side to facilitate on-demand data retrieval.</li>
+          <li><b>Secure Disposal:</b> Unlinking your account clears the iOS Keychain and triggers token revocation on the backend.</li>
         </ul>
       </div>
 
       <div class="card" style="margin-top:14px;">
-        <h3>Sharing</h3>
-        <p class="muted">Syncra shares information only as needed to provide the service:</p>
-        <ul class="list">
-          <li><b>Plaid:</b> for account connection and data retrieval.</li>
-          <li><b>Hosting provider:</b> to operate backend infrastructure.</li>
-        </ul>
-        <p class="muted">Syncra does not sell personal information.</p>
-      </div>
-
-      <div class="card" style="margin-top:14px;">
-        <h3>Security</h3>
-        <ul class="list">
-          <li>HTTPS (TLS 1.2+) for communications between the app, backend, and Plaid</li>
-          <li>MFA required for administrative portals (GitHub, hosting, Plaid, Apple)</li>
-          <li>Secrets stored as environment variables (not committed to source control)</li>
-        </ul>
+        <h3>Network Security</h3>
+        <p class="muted">
+          All communications between the Syncra app, the backend, and Plaid are strictly enforced over <b>HTTPS (TLS 1.2+)</b>. Syncra rejects all insecure connections to ensure bank-level security for data in transit.
+        </p>
       </div>
 
       <div class="card" style="margin-top:14px;">
         <h3>Your Choices</h3>
         <ul class="list">
-          <li><b>Unlink:</b> You can unlink your account in Syncra settings to stop data access.</li>
-          <li><b>Deletion requests:</b> You may request deletion by contacting support.</li>
+          <li><b>Unlink & Wipe:</b> You can use the "Unlink Account" feature in Settings to revoke data access and clear all local secure storage.</li>
+          <li><b>Access Requests:</b> You may contact support at any time to request an export or deletion of any associated metadata.</li>
         </ul>
       </div>
 
       <div class="card" style="margin-top:14px;">
         <h3>Contact</h3>
         <p class="muted">
-          Questions? Contact: <a href="mailto:support@syncra.app">support@syncra.app</a>
+          Questions regarding our security practices? Contact: <a href="mailto:support@syncra.app">support@syncra.app</a>
         </p>
       </div>
 
@@ -126,7 +113,6 @@
     <div class="container footergrid">
       <div>
         <div class="brand footbrand">
-          <!-- ✅ Must match your repo file exactly: Logo (3).png -->
           <img src="Logo (3).png" alt="Syncra logo" class="brand-logo" />
           <span>Syncra</span>
         </div>
