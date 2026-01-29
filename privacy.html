@@ -5,39 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy — Syncra</title>
   <meta name="description" content="Syncra Privacy Policy" />
+  <meta name="theme-color" content="#0b0b0f" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="index.html"><span class="logo">S</span><span>Syncra</span></a>
-      <nav class="navlinks">
+      <a class="brand" href="index.html" aria-label="Syncra home">
+        <!-- ✅ Must match your repo file exactly: Logo (3).png -->
+        <img src="Logo (3).png" alt="Syncra logo" class="brand-logo" />
+        <span>Syncra</span>
+      </a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <a href="index.html#features">Features</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
       </nav>
+
       <a class="btn btn-ghost" href="index.html">Home</a>
     </div>
   </header>
 
   <main class="section">
     <div class="container">
-      <h1 style="font-size:34px;margin-bottom:10px;">Privacy Policy</h1>
-      <p class="muted small">Effective Date: January 28, 2026</p>
+      <div class="pagehead">
+        <h1>Privacy Policy</h1>
+        <p class="muted">Effective Date: January 28, 2026</p>
+      </div>
 
-      <div class="card" style="margin-top:16px;">
+      <div class="card">
         <h3>Overview</h3>
         <p class="muted">
           Syncra is designed around data minimization. We collect and process only what is needed to connect accounts
-          and display balances and transactions. We do not sell personal information.
+          and display balances and transactions. Syncra does not sell personal information.
         </p>
       </div>
 
       <div class="card" style="margin-top:14px;">
         <h3>Information We Process</h3>
-        <p class="muted">
-          Depending on how you use Syncra, we may process:
-        </p>
+        <p class="muted">Depending on how you use Syncra, we may process:</p>
         <ul class="list">
           <li><b>Financial data (via Plaid):</b> account balances, account metadata, and transactions needed for display.</li>
           <li><b>Technical data:</b> basic diagnostics (e.g., request IDs, error types) to keep the service working.</li>
@@ -48,7 +57,7 @@
         <h3>Bank Credentials</h3>
         <p class="muted">
           Syncra does <b>not</b> collect, see, or store your bank username or password.
-          If you choose to connect an account, authentication occurs through <b>Plaid Link</b>.
+          Authentication occurs through <b>Plaid Link</b>.
         </p>
       </div>
 
@@ -59,8 +68,8 @@
           Syncra receives tokens from Plaid that allow the backend to request data from Plaid on your behalf.
         </p>
         <ul class="list">
-          <li><b>Tokens:</b> tokens are used to enable account data retrieval. Tokens are treated as sensitive.</li>
-          <li><b>Read-only intent:</b> Syncra’s goal is to request only the data needed to show balances/transactions.</li>
+          <li><b>Tokens:</b> tokens are treated as sensitive and are not exposed in logs or analytics.</li>
+          <li><b>Data access:</b> Syncra requests only what is needed to provide the app experience.</li>
         </ul>
       </div>
 
@@ -69,29 +78,25 @@
         <ul class="list">
           <li><b>Financial data:</b> retrieved on-demand and not stored in a persistent database beyond immediate session needs.</li>
           <li><b>Plaid access tokens:</b> retained only while your account remains linked to support on-demand retrieval.</li>
-          <li><b>Operational logs:</b> retained up to 30 days and scrubbed to avoid storing sensitive tokens or raw financial payloads.</li>
+          <li><b>Operational logs:</b> retained up to 30 days and scrubbed to avoid storing tokens or raw financial payloads.</li>
         </ul>
       </div>
 
       <div class="card" style="margin-top:14px;">
         <h3>Sharing</h3>
-        <p class="muted">
-          Syncra shares information only as needed to provide the service:
-        </p>
+        <p class="muted">Syncra shares information only as needed to provide the service:</p>
         <ul class="list">
           <li><b>Plaid:</b> for account connection and data retrieval.</li>
-          <li><b>Hosting provider (e.g., Render):</b> to operate backend infrastructure.</li>
+          <li><b>Hosting provider:</b> to operate backend infrastructure.</li>
         </ul>
-        <p class="muted">
-          Syncra does not sell personal information.
-        </p>
+        <p class="muted">Syncra does not sell personal information.</p>
       </div>
 
       <div class="card" style="margin-top:14px;">
         <h3>Security</h3>
         <ul class="list">
           <li>HTTPS (TLS 1.2+) for communications between the app, backend, and Plaid</li>
-          <li>Administrative portals protected with MFA (GitHub, Render, Plaid, Apple)</li>
+          <li>MFA required for administrative portals (GitHub, hosting, Plaid, Apple)</li>
           <li>Secrets stored as environment variables (not committed to source control)</li>
         </ul>
       </div>
@@ -99,7 +104,7 @@
       <div class="card" style="margin-top:14px;">
         <h3>Your Choices</h3>
         <ul class="list">
-          <li><b>Unlink:</b> You can unlink your account in Syncra settings. This clears local cache and deletes server-side tokens used for retrieval.</li>
+          <li><b>Unlink:</b> You can unlink your account in Syncra settings to stop data access.</li>
           <li><b>Deletion requests:</b> You may request deletion by contacting support.</li>
         </ul>
       </div>
@@ -112,7 +117,7 @@
       </div>
 
       <p class="small muted" style="margin-top:14px;">
-        Note: Syncra may update this policy. Changes will be posted on this page with an updated effective date.
+        Syncra may update this policy. Changes will be posted on this page with an updated effective date.
       </p>
     </div>
   </main>
@@ -120,17 +125,23 @@
   <footer class="footer">
     <div class="container footergrid">
       <div>
-        <div class="brand footbrand"><span class="logo">S</span><span>Syncra</span></div>
-        <p class="small muted">© <span id="year"></span> Syncra</p>
+        <div class="brand footbrand">
+          <!-- ✅ Must match your repo file exactly: Logo (3).png -->
+          <img src="Logo (3).png" alt="Syncra logo" class="brand-logo" />
+          <span>Syncra</span>
+        </div>
+        <p class="small muted">© <span id="year"></span> Syncra. All rights reserved.</p>
       </div>
       <div class="footlinks">
-        <a href="index.html">Home</a>
-        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
       </div>
     </div>
   </footer>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
